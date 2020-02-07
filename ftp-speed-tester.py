@@ -66,17 +66,16 @@ class Ftp:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='FTP bandwidth measurements.')
-    # parser.add_argument('-l','--log', type=str, default='DEBUG', help='Set logging level (DEBUG|INFO|WARN|CRIT)')
-    parser.add_argument('-u','--upload', type=str, help='Activate uplink and specific directory to copy things')
-    parser.add_argument('-i','--interval', type=float, default=1.0, help='Measurement interval duration')
-    parser.add_argument('-t','--timeout', type=int, default=10, help='FTP timeout in seconds')
-    parser.add_argument('-f','--filename', type=str, default='ftp_data.txt', help='File to write output')
-    parser.add_argument('-d','--data', type=str, default='/mirror/ubuntu-cdimage/13.10/ubuntu-13.10-server-amd64+mac.iso', help='Data to download/upload to create traffic')
-    parser.add_argument('--host',type=str, default='mirror.switch.ch',  help='Ftp host')
-    parser.add_argument('-n','--netrc', type=str, default='sample.netrc', help='Location of netrc file to use')
-    parser.add_argument('-s','--serial', type=str, help='Serial port to use')
-    parser.add_argument('-p','--processes', type=int, default=1, help='Number of processes to start')
+    parser = argparse.ArgumentParser(description='FTP bandwidth check.')
+    parser.add_argument('-u', '--upload', action='store_true', dest='upload', default=False, help='Run upload benchmark.')
+    parser.add_argument('-d', '--download', action='store_true', dest='download', default=False, help='Run download benchmark.')
+    parser.add_argument('-t', '--timeout', action="store", dest='timeout', type=int, default=10, help='FTP timeout in seconds')
+    parser.add_argument('-f', '--filename', action="store", type=str, dest='filename', help='File to write output')
+    parser.add_argument('-d', '--directory', action="store", type=str, dest='directory', help='Directory to store file.')
+    parser.add_argument('-h', '--host', action="store", type=str, dest='host',  help='Ftp host')
+    parser.add_argument('--port', action="store", type=int, dest='port',  help='Ftp port')
+    parser.add_argument('-u', '--user', action="store", type=str, dest='port',  help='Ftp user')
+    parser.add_argument('-p', '--passwd', action="store", type=str, dest='passwd',  help='Ftp pass')
     args = parser.parse_args()
 
     ftp = Ftp(size,args.interval,args.timeout,args.host,args.netrc,args.data,args.upload)
