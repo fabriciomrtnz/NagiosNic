@@ -1,1 +1,40 @@
-{"type":"result","timestamp":"2020-02-08T19:53:09Z","ping":{"jitter":0.20799999999999999,"latency":2.835},"download":{"bandwidth":77522088,"bytes":527029568,"elapsed":6816},"upload":{"bandwidth":77311261,"bytes":720570112,"elapsed":9511},"packetLoss":0,"isp":"Telefonica de Espana","interface":{"internalIp":"192.168.1.8","name":"ens33","macAddr":"00:0C:29:68:DA:B8","isVpn":false,"externalIp":"88.14.84.190"},"server":{"id":14539,"name":"Vodafone ES","location":"Alcobendas","country":"Spain","host":"speedtestmadrid2.vodafone.es","port":8080,"ip":"62.87.67.34"},"result":{"id":"08697c13-4e55-4a95-b596-c423fe9e9a64","url":"https://www.speedtest.net/result/c/08697c13-4e55-4a95-b596-c423fe9e9a64"}}
+{
+   "type":"result",
+   "timestamp":"2020-02-08T19:53:09Z",
+   "ping":{
+      "jitter":0.20799999999999999,
+      "latency":2.835
+   },
+   "download":{
+      "bandwidth":77522088,
+      "bytes":527029568,
+      "elapsed":6816
+   },
+   "upload":{
+      "bandwidth":77311261,
+      "bytes":720570112,
+      "elapsed":9511
+   },
+   "packetLoss":0,
+   "isp":"Telefonica de Espana",
+   "interface":{
+      "internalIp":"192.168.1.8",
+      "name":"ens33",
+      "macAddr":"00:0C:29:68:DA:B8",
+      "isVpn":false,
+      "externalIp":"88.14.84.190"
+   },
+   "server":{
+      "id":14539,
+      "name":"Vodafone ES",
+      "location":"Alcobendas",
+      "country":"Spain",
+      "host":"speedtestmadrid2.vodafone.es",
+      "port":8080,
+      "ip":"62.87.67.34"
+   },
+   "result":{
+      "id":"08697c13-4e55-4a95-b596-c423fe9e9a64",
+      "url":"https://www.speedtest.net/result/c/08697c13-4e55-4a95-b596-c423fe9e9a64"
+   }
+}
