@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-#
+# Plugin that works with speedtes.net native cli
+# Needs to be setup as a passive check because it takes a while to run.
 
 import sys
 import pprint
@@ -46,16 +47,16 @@ upload = data["upload"]["bandwidth"]
 ping = data["ping"]["latency"]
 packetloss = data["packetLoss"]
 
-if int(download) > int(args.dcritic):
+if int(download) <= int(args.dcritic):
     print("DOWNLOAD CRITICAL | DOWNLOAD=" + str(download) + " UPLOAD=" + str(upload) + " PING=" + str(ping) + " PACKETLOSS=" + str(packetloss))
     exit(2)
-elif int(upload) > int(args.ucritic):
+elif int(upload) <= int(args.ucritic):
     print("UPLOAD CRITICAL | DOWNLOAD=" + str(download) + " UPLOAD=" + str(upload) + " PING=" + str(ping) + " PACKETLOSS=" + str(packetloss))
     exit(2)
-elif int(download) > int(args.dwarn):
+elif int(download) <= int(args.dwarn):
     print("DOWNLOAD WARNING | DOWNLOAD=" + str(download) + " UPLOAD=" + str(upload) + " PING=" + str(ping) + " PACKETLOSS=" + str(packetloss))
     exit(1)
-elif int(upload) > int(args.uwarn):
+elif int(upload) <= int(args.uwarn):
     print("UPLOAD WARNING | DOWNLOAD=" + str(download) + " UPLOAD=" + str(upload) + " PING=" + str(ping) + " PACKETLOSS=" + str(packetloss))
     exit(1)
 else:
