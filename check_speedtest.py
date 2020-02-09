@@ -36,7 +36,8 @@ args = parser.parse_args()
 #status, output = commands.getstatusoutput(args.cmd + " -s " + args.server + " -f json")
 
 p = subprocess.Popen(args.cmd + " -s " + args.server + " -f json", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-(output, err) = p.communicate().wait()
+(output, err) = p.communicate()
+p.wait()
 
 data = json.loads(output)
 
