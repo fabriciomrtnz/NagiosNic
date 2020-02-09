@@ -31,7 +31,11 @@ parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
 args = parser.parse_args()
 
-status, output = commands.getstatusoutput(args.cmd + " -s " + args.server + " -f json")
+#status, output = commands.getstatusoutput(args.cmd + " -s " + args.server + " -f json")
+
+p = subprocess.Popen(args.cmd + " -s " + args.server + " -f json", stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+(output, err) = p.communicate().wait()
+
 data = json.loads(output)
 
 download = data["download"]["bandwidth"]
